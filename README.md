@@ -4,7 +4,7 @@
 ----
 2 volatility oracle with VolatilityOracle.sol 
 OR
-volatility oracle by Ken form Uniswap https://github.com/ankitchiplunkar/v3-volatility-oracle
+volatility oracle by Ken form Uniswap https://github.com/ankitchiplunkar/v3-volatility-oracle : the function for getting volatility is: https://ankitchiplunkar.com/v3-volatility-oracle/howtouse/ 
 OR 
 volatility calculation from Axiom
 OR 
