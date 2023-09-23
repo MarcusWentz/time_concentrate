@@ -105,3 +105,14 @@ Thanks to:
 - [BokkyPooBah](https://twitter.com/BokkyPooBah) for [BokkyPooBahsDateTimeLibrary](https://github.com/bokkypoobah/BokkyPooBahsDateTimeLibrary)
 ###
 -Alternative example of trading hours: https://github.com/bennoprice/univ4/blob/main/src/TradingHours.sol 
+
+
+Hook #1 timing:
+  <img src="./img/uniswap_heatmap_hook.jpg" width=600px />
+
+
+Hook #2 volatility for modifying ranges:
+<img src="./img/uniswap_fees_hook.jpg" width=600px />
+
+
+
