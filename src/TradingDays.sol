@@ -47,12 +47,20 @@ abstract contract TradingDays {
         dst = _dst;
     }
 
-    /// @notice Return true between 9:30 AM and 4:00 PM ET.
+    /// @notice Return true during core and bot trading hours. 
     function isCoreTradingHours() public view virtual returns (bool) {
         uint256 hour = time().getHour();
+        // Core NYSE trading hours 9:30 AM to 4:00 PM ET.
         if (hour >= 9 && hour < 16) {
             if (hour == 9) {
                 return time().getMinute() >= 30;
+            }
+            return true;
+        }
+        // Bot overnight trading hours 7:55 PM to 9:00 PM ET. Based Uniswap fees heatmap from Python scripts for this project.
+        if (hour >= 19 && hour < 21) {
+            if (hour == 19) {
+                return time().getMinute() >= 55;
             }
             return true;
         }

@@ -30,6 +30,7 @@ post volatility on UMA
 
 ```
 forge install https://github.com/Uniswap/v4-core --no-commit
+forge install https://github.com/Uniswap/periphery-next --no-commit
 forge compile
 ```
 
