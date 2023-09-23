@@ -14,3 +14,8 @@ post volatility on UMA
 3 create two LP positions. 1 in +/- 2 volatility range (allocate 20% of LP position) and 2 in +/- 1 volatility range (allocate 80% of LP position).
 ---
 ### 
+
+
+#TODO:
+
+### make quick 4 min vid, include data explaining use of v4 hooks, when fees occur, how we deal with icnreasing/decreasing ranges with volatility.
