@@ -6,4 +6,13 @@
 	url = https://github.com/Uniswap/v4-core
 [submodule "lib/periphery-next"]
 	path = lib/periphery-next
-	url = https://github.com/Uniswap/periphery-next
+	url = https://github.com/uniswap/v4-periphery
+[submodule "lib/openzeppelin-contracts"]
+	path = lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "lib/BokkyPooBahsDateTimeLibrary"]
+	path = lib/BokkyPooBahsDateTimeLibrary
+	url = https://github.com/bokkypoobah/BokkyPooBahsDateTimeLibrary
+[submodule "lib/solady"]
+	path = lib/solady
+	url = https://github.com/Vectorized/solady

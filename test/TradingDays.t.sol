@@ -3,27 +3,27 @@ pragma solidity ^0.8.15;
 
 import "forge-std/Test.sol";
 import { GasSnapshot } from "forge-gas-snapshot/GasSnapshot.sol";
-import { TestERC20 } from "@uniswap/v4-core/contracts/test/TestERC20.sol";
+import { TestERC20 } from "v4-core/test/TestERC20.sol";
 import { IERC20Minimal } from
-    "@uniswap/v4-core/contracts/interfaces/external/IERC20Minimal.sol";
-import { IHooks } from "@uniswap/v4-core/contracts/interfaces/IHooks.sol";
-import { Hooks } from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
-import { TickMath } from "@uniswap/v4-core/contracts/libraries/TickMath.sol";
-import { PoolManager } from "@uniswap/v4-core/contracts/PoolManager.sol";
+    "v4-core/interfaces/external/IERC20Minimal.sol";
+import { IHooks } from "v4-core/interfaces/IHooks.sol";
+import { Hooks } from "v4-core/libraries/Hooks.sol";
+import { TickMath } from "v4-core/libraries/TickMath.sol";
+import { PoolManager } from "v4-core/PoolManager.sol";
 import { IPoolManager } from
-    "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
-import { PoolId } from "@uniswap/v4-core/contracts/libraries/PoolId.sol";
+    "v4-core/interfaces/IPoolManager.sol";
+import { PoolId } from "v4-core/types/PoolId.sol";
 import { PoolModifyPositionTest } from
-    "@uniswap/v4-core/contracts/test/PoolModifyPositionTest.sol";
-import { PoolSwapTest } from "@uniswap/v4-core/contracts/test/PoolSwapTest.sol";
+    "v4-core/test/PoolModifyPositionTest.sol";
+import { PoolSwapTest } from "v4-core/test/PoolSwapTest.sol";
 import { PoolDonateTest } from
-    "@uniswap/v4-core/contracts/test/PoolDonateTest.sol";
-import { Deployers } from
-    "@uniswap/v4-core/test/foundry-tests/utils/Deployers.sol";
+    "v4-core/test/PoolDonateTest.sol";
+// import { Deployers } from
+//     "v4-core/test/foundry-tests/utils/Deployers.sol";
 import {
     CurrencyLibrary,
     Currency
-} from "@uniswap/v4-core/contracts/libraries/CurrencyLibrary.sol";
+} from "v4-core/types/Currency.sol";
 import { BokkyPooBahsDateTimeLibrary as LibDateTime } from
     "BokkyPooBahsDateTimeLibrary/contracts/BokkyPooBahsDateTimeLibrary.sol";
 
