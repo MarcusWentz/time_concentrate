@@ -19,3 +19,10 @@ post volatility on UMA
 #TODO:
 
 ### make quick 4 min vid, include data explaining use of v4 hooks, when fees occur, how we deal with icnreasing/decreasing ranges with volatility.
+
+## Foundry Uniswap V4 Setup 
+
+```
+forge install https://github.com/Uniswap/v4-core --no-commit
+forge compile
+```
