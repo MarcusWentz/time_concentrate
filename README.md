@@ -1,6 +1,12 @@
 # ethnyuniswapv4hooks
 
 1 hook trading hours (UTC 23:59 - 1:00) AND (UTC 12:00 - 17:00)
+
+---
+EDT:  9:30 - 16:00 is UTC: 13:30 - 20:00
+
+EDT:   19:59 - 21:00 is UTC: 23:59 - 1:00
+---
 ----
 2 volatility oracle with VolatilityOracle.sol
 OR
