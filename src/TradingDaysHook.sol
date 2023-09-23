@@ -6,6 +6,7 @@ import { BaseHook } from "periphery-next/BaseHook.sol";
 import { IPoolManager } from "v4-core/interfaces/IPoolManager.sol";
 import { TradingDays, LibDateTime, HolidayCalendar, DaylightSavingsCalendar } from "./TradingDays.sol";
 import { PoolKey } from "v4-core/types/PoolKey.sol";
+import { VolLib } from "VolLib.sol";
 
 /// @title TradingDaysHook
 /// @author horsefacts <horsefacts@terminally.online>
@@ -18,14 +19,16 @@ contract TradingDaysHook is BaseHook, TradingDays {
     /// @notice Ring the opening bell.
     event DingDingDing(address indexed ringer);
 
+    VolLib volLib;
+
     /// @notice Year/month/day mapping recording whether the market opened.
     mapping(uint256 => mapping(uint256 => mapping(uint256 => bool))) public
         marketOpened;
 
-    constructor(IPoolManager _poolManager, HolidayCalendar _holidays, DaylightSavingsCalendar _dst)
+    constructor(IPoolManager _poolManager, HolidayCalendar _holidays, DaylightSavingsCalendar _dst, address volLibAddress)
         BaseHook(_poolManager)
         TradingDays(_holidays, _dst)
-    { }
+    { volLib = VolLib(volLibAddress);}
 
     function getHooksCalls()
         public
@@ -49,7 +52,7 @@ contract TradingDaysHook is BaseHook, TradingDays {
         address sender,
         IPoolManager.PoolKey calldata,
         IPoolManager.SwapParams calldata
-    ) external override returns (bytes4) {
+    ) external returns (bytes4) {
         State s = state();
 
         if (s == State.OPEN) {
@@ -61,6 +64,13 @@ contract TradingDaysHook is BaseHook, TradingDays {
         } else if (s == State.AFTER_HOURS) {
             revert AfterHours();
         }
+
+        uint volatility = VolLib.getVolByHours(PoolKey.poolAddress, 24);
+
+        poolManager.getSlot0(IPoolManager.PoolKey);
+        uint upperRange = volatility * //volatility * price
+        uint lowerRange = volatility *
+        uint balanceDelta = modifyPosition();
 
         return BaseHook.beforeSwap.selector;
     }
@@ -74,5 +84,11 @@ contract TradingDaysHook is BaseHook, TradingDays {
         // Wow! You get to ring the opening bell!
         marketOpened[year][month][day] = true;
         emit DingDingDing(ringer);
+    }
+
+    function modifyPosition(PoolKey memory key, IPoolManager.ModifyPositionParams memory params) internal
+    returns (BalanceDelta delta)
+    {
+        delta = abi.decode(poolManager.lock(abi.encode(CallbackData(msg.sender, key, params))), (BalanceDelta));
     }
 }
