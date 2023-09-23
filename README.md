@@ -97,3 +97,5 @@ Inspired by [Mariano's](https://github.com/nanexcool) legendary "office hours" m
 Thanks to:
 - [saucepoint](https://twitter.com/saucepoint) for their [v4 hooks template](https://github.com/saucepoint/v4-template)
 - [BokkyPooBah](https://twitter.com/BokkyPooBah) for [BokkyPooBahsDateTimeLibrary](https://github.com/bokkypoobah/BokkyPooBahsDateTimeLibrary)
+###
+-Alternative example of trading hours: https://github.com/bennoprice/univ4/blob/main/src/TradingHours.sol 
