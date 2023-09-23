@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.15;
 
-import { Hooks } from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
-import { BaseHook } from "v4-periphery/BaseHook.sol";
+import { Hooks } from "v4-core/libraries/Hooks.sol";
+import { BaseHook } from "periphery-next/BaseHook.sol";
 import { IPoolManager } from
-    "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
+    "v4-core/interfaces/IPoolManager.sol";
 
 import { TradingDays, LibDateTime, HolidayCalendar, DaylightSavingsCalendar } from "./TradingDays.sol";
 
