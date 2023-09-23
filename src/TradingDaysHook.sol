@@ -3,10 +3,9 @@ pragma solidity ^0.8.15;
 
 import { Hooks } from "v4-core/libraries/Hooks.sol";
 import { BaseHook } from "periphery-next/BaseHook.sol";
-import { IPoolManager } from
-    "v4-core/interfaces/IPoolManager.sol";
-
+import { IPoolManager } from "v4-core/interfaces/IPoolManager.sol";
 import { TradingDays, LibDateTime, HolidayCalendar, DaylightSavingsCalendar } from "./TradingDays.sol";
+import { PoolKey } from "v4-core/types/PoolKey.sol";
 
 /// @title TradingDaysHook
 /// @author horsefacts <horsefacts@terminally.online>
