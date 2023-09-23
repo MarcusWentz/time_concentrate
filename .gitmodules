@@ -6,4 +6,4 @@
 	url = https://github.com/Uniswap/v4-core
 [submodule "lib/periphery-next"]
 	path = lib/periphery-next
-	url = https://github.com/Uniswap/periphery-next
+	url = https://github.com/uniswap/v4-periphery
