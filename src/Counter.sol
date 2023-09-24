@@ -19,6 +19,7 @@ contract Counter is BaseHook {
     uint256 public afterModifyPositionCount;
 
     uint256 public yo;
+    uint256 public yoyo;
 
 
     constructor(IPoolManager _poolManager) BaseHook(_poolManager) {}

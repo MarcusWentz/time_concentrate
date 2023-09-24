@@ -1,11 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.15;
 
-import { Hooks } from "v4-core/libraries/Hooks.sol";
-import { BaseHook } from "periphery-next/BaseHook.sol";
-import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
 import { TradingDays, LibDateTime, HolidayCalendar, DaylightSavingsCalendar } from "./TradingDays.sol";
-import { PoolKey } from "v4-core/types/PoolKey.sol";
+
+import {BaseHook} from "v4-periphery/BaseHook.sol";
+
+import {Hooks} from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
+import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
+import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol";
+import {PoolId, PoolIdLibrary} from "@uniswap/v4-core/contracts/types/PoolId.sol";
+import {BalanceDelta} from "@uniswap/v4-core/contracts/types/BalanceDelta.sol";
 
 /// @title TradingDaysHook
 /// @author horsefacts <horsefacts@terminally.online>
