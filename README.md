@@ -9,14 +9,18 @@ Inspired by Uniswap V4 hook for NYSE trading hours:
 https://github.com/horsefacts/trading-days
 
 ## Foundry Uniswap V4 Setup
+```shell
+forge compile
 ```
+manually install libraries if needed
+```shell
 forge install https://github.com/Uniswap/v4-core --no-commit
 forge install https://github.com/Uniswap/periphery-next --no-commit
 forge install https://github.com/OpenZeppelin/openzeppelin-contracts --no-commit
 forge install https://github.com/bokkypoobah/BokkyPooBahsDateTimeLibrary --no-commit
 forge install https://github.com/Vectorized/solady --no-commit
-forge compile
 ```
+
 ## Foundry deploy and verify contract code manually 
 ```shell
 forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView
