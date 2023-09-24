@@ -120,10 +120,13 @@ Thanks to:
 
 <img src="./img/uniswap_fees_hook.jpg" width=800px />
 
-## Deploy contract manually 
+### Foundry deploy and verify contract code manually 
 ```shell
 forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView
 ```
+### Deployed and verified contract on Sepolia 
+
+https://sepolia.etherscan.io/address/0xc7a03c696cec68b6675c3df09d83900cd5a40687#code
 
 
 
