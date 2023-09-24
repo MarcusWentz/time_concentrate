@@ -22,12 +22,28 @@ forge install https://github.com/Vectorized/solady --no-commit
 ```
 
 ## Foundry deploy and verify contract code manually 
+### Sepolia (Etherscan)
 ```shell
 forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView
 ```
-## Deployed and verified contract on Sepolia 
+### Scroll (Blockscout) [EIP-1559 not added yet]
+```shell
+forge create --legacy --rpc-url https://sepolia-rpc.scroll.io/ --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView --verify --verifier blockscout --verifier-url https://sepolia-blockscout.scroll.io/api\? 
+```
+or
+```shell
+forge verify-contract 0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B src/TradingView.sol:TradingView --chain-id 534351 --verifier-url https://sepolia-blockscout.scroll.io/api\? --verifier blockscout
+```
+
+## Deployed and verified contract 
+
+### Sepolia 
 
 https://sepolia.etherscan.io/address/0xc7a03c696cec68b6675c3df09d83900cd5a40687#code
+
+### Scroll
+
+https://sepolia-blockscout.scroll.io/address/0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B/contracts#address-tabs
 
 ## Time Ranges
 
