@@ -125,7 +125,7 @@ contract TradingDaysTest is Test, Deployers, GasSnapshot {
 
         // // Create the pool
         // poolKey = PoolKey(
-        //     Currency.wrap(token0),
+        //     Currency.wrap(address(token1)),
         //     Currency.wrap(address(token1)),
         //     3000,
         //     60,
@@ -134,32 +134,32 @@ contract TradingDaysTest is Test, Deployers, GasSnapshot {
         // poolId = PoolId.toId(poolKey);
         // manager.initialize(poolKey, SQRT_RATIO_1_1);
 
-        // // Helpers for interacting with the pool
-        // modifyPositionRouter =
-        //     new PoolModifyPositionTest(IPoolManager(address(manager)));
-        // swapRouter = new PoolSwapTest(IPoolManager(address(manager)));
+        // Helpers for interacting with the pool
+        modifyPositionRouter =
+            new PoolModifyPositionTest(IPoolManager(address(manager)));
+        swapRouter = new PoolSwapTest(IPoolManager(address(manager)));
 
-        // // Provide liquidity to the pool
-        // token0.approve(address(modifyPositionRouter), 100 ether);
-        // token1.approve(address(modifyPositionRouter), 100 ether);
-        // token0.mint(address(this), 100 ether);
-        // token1.mint(address(this), 100 ether);
-        // modifyPositionRouter.modifyPosition(
-        //     poolKey, IPoolManager.ModifyPositionParams(-60, 60, 10 ether)
-        // );
-        // modifyPositionRouter.modifyPosition(
-        //     poolKey, IPoolManager.ModifyPositionParams(-120, 120, 10 ether)
-        // );
-        // modifyPositionRouter.modifyPosition(
-        //     poolKey,
-        //     IPoolManager.ModifyPositionParams(
-        //         TickMath.minUsableTick(60), TickMath.maxUsableTick(60), 10 ether
-        //     )
-        // );
+        // Provide liquidity to the pool
+        token0.approve(address(modifyPositionRouter), 100 ether);
+        token1.approve(address(modifyPositionRouter), 100 ether);
+        token0.mint(address(this), 100 ether);
+        token1.mint(address(this), 100 ether);
+        modifyPositionRouter.modifyPosition(
+            poolKey, IPoolManager.ModifyPositionParams(-60, 60, 10 ether)
+        );
+        modifyPositionRouter.modifyPosition(
+            poolKey, IPoolManager.ModifyPositionParams(-120, 120, 10 ether)
+        );
+        modifyPositionRouter.modifyPosition(
+            poolKey,
+            IPoolManager.ModifyPositionParams(
+                TickMath.minUsableTick(60), TickMath.maxUsableTick(60), 10 ether
+            )
+        );
 
-        // // Approve for swapping
-        // token0.approve(address(swapRouter), 100 ether);
-        // token1.approve(address(swapRouter), 100 ether);
+        // Approve for swapping
+        token0.approve(address(swapRouter), 100 ether);
+        token1.approve(address(swapRouter), 100 ether);
     }
 
     function test_BeforeOpeningBellReverts_AfterHours() public {
