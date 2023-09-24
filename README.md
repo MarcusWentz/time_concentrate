@@ -2,6 +2,8 @@
 
 ## Overview
 
+<img src="./img/unicorn_logo_time.jpg" width=800px />
+
 Uniswap V4 hook to restrict trading during NYSE hours and after hours when bots trade.
 
 Inspired by Uniswap V4 hook for NYSE trading hours:
