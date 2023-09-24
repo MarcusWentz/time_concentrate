@@ -80,8 +80,8 @@ contract TradingDaysHook is BaseHook, TradingDays {
         marketOpened[year][month][day] = true;
         emit DingDingDing(ringer);
     }
-
-    function getVol() internal returns(uint){
+    /// @dev Helper function to get volatility from a pair.
+    function getVolatility() public pure returns(uint256){
         return 5;
     }
 }
