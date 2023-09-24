@@ -31,7 +31,19 @@ forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey 
 ### Scroll [EIP-1559 not added yet]
 #### Etherscan
 ```shell
-forge create --legacy --rpc-url https://sepolia-rpc.scroll.io/ --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView --chain-id 534351
+forge create --legacy --rpc-url https://sepolia-rpc.scroll.io/ --etherscan-api-key D62920783A4311EE9D6600155D570C742E --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView --verifier etherscan --verifier-url https://api-sepolia.scrollscan.dev/api
+```
+or
+```shell
+forge verify-contract \
+    --num-of-optimizations 200 \
+    --watch \
+    --verifier etherscan \
+    --verifier-url https://api-sepolia.scrollscan.dev/api \
+    --etherscan-api-key D62920783A4311EE9D6600155D570C742E \
+    --compiler-version v0.8.20+commit.a1b79de6 \
+    0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B \
+    TradingView
 ```
 #### Blockscout
 ```shell
@@ -52,7 +64,7 @@ https://sepolia.etherscan.io/address/0xc7a03c696cec68b6675c3df09d83900cd5a40687#
 
 #### Etherscan
 
-!!!
+https://sepolia.scrollscan.dev/address/0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B#code
 
 #### Blockscout
 
