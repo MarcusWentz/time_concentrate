@@ -28,13 +28,18 @@ forge install https://github.com/Vectorized/solady --no-commit
 ```shell
 forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView
 ```
-### Scroll (Blockscout) [EIP-1559 not added yet]
+### Scroll [EIP-1559 not added yet]
+#### Etherscan
+```shell
+forge create --legacy --rpc-url https://sepolia-rpc.scroll.io/ --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView --chain-id 534351
+```
+#### Blockscout
 ```shell
 forge create --legacy --rpc-url https://sepolia-rpc.scroll.io/ --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView --verify --verifier blockscout --verifier-url https://sepolia-blockscout.scroll.io/api\? 
 ```
 or (deployed at address 0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B already)
 ```shell
-forge verify-contract 0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B src/TradingView.sol:TradingView --chain-id 534351 --verifier-url https://sepolia-blockscout.scroll.io/api\? --verifier blockscout
+forge verify-contract 0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B src/TradingView.sol:TradingView --chain-id 534351 --verifier-url https://sepolia-blockscout.scroll.io/api\? --verifier blockscout 
 ```
 
 ## Deployed and verified contract 
@@ -44,6 +49,12 @@ forge verify-contract 0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B src/TradingView
 https://sepolia.etherscan.io/address/0xc7a03c696cec68b6675c3df09d83900cd5a40687#code
 
 ### Scroll
+
+#### Etherscan
+
+!!!
+
+#### Blockscout
 
 https://sepolia-blockscout.scroll.io/address/0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B/contracts#address-tabs
 
@@ -68,12 +79,6 @@ post volatility on UMA
 
 3 create two LP positions. 1 in +/- 2 volatility range (allocate 20% of LP position) and 2 in +/- 1 volatility range (allocate 80% of LP position).
 ---
-###
-
-
-#TODO:
-
-### make quick 4 min vid, include data explaining use of v4 hooks, when fees occur, how we deal with icnreasing/decreasing ranges with volatility.
 
 
 # Horsefact trading hours info:
@@ -145,16 +150,17 @@ Inspired by [Mariano's](https://github.com/nanexcool) legendary "office hours" m
 Thanks to:
 - [saucepoint](https://twitter.com/saucepoint) for their [v4 hooks template](https://github.com/saucepoint/v4-template)
 - [BokkyPooBah](https://twitter.com/BokkyPooBah) for [BokkyPooBahsDateTimeLibrary](https://github.com/bokkypoobah/BokkyPooBahsDateTimeLibrary)
-###
--Alternative example of trading hours: https://github.com/bennoprice/univ4/blob/main/src/TradingHours.sol 
+### Alternative example of trading hours 
+
+https://github.com/bennoprice/univ4/blob/main/src/TradingHours.sol 
 
 
-###Hook #1 timing: 
+### Hook #1 timing: 
 
 <img src="./img/uniswap_heatmap_hook.jpg" width=800px />
 
 
-###Hook #2 volatility for modifying ranges:
+### Hook #2 volatility for modifying ranges:
 
 <img src="./img/uniswap_fees_hook.jpg" width=800px />
 
