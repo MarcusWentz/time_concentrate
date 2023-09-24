@@ -1,4 +1,31 @@
-# ethnyuniswapv4hooks
+# Time Concentrate
+
+## Overview
+
+Uniswap V4 hook to restrict trading during NYSE hours and after hours when bots trade.
+
+Inspired by Uniswap V4 hook for NYSE trading hours:
+
+https://github.com/horsefacts/trading-days
+
+## Foundry Uniswap V4 Setup
+```
+forge install https://github.com/Uniswap/v4-core --no-commit
+forge install https://github.com/Uniswap/periphery-next --no-commit
+forge install https://github.com/OpenZeppelin/openzeppelin-contracts --no-commit
+forge install https://github.com/bokkypoobah/BokkyPooBahsDateTimeLibrary --no-commit
+forge install https://github.com/Vectorized/solady --no-commit
+forge compile
+```
+## Foundry deploy and verify contract code manually 
+```shell
+forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView
+```
+## Deployed and verified contract on Sepolia 
+
+https://sepolia.etherscan.io/address/0xc7a03c696cec68b6675c3df09d83900cd5a40687#code
+
+## Time Ranges
 
 1 hook trading hours (UTC 23:59 - 1:00) AND (UTC 12:00 - 17:00)
 
@@ -25,17 +52,6 @@ post volatility on UMA
 #TODO:
 
 ### make quick 4 min vid, include data explaining use of v4 hooks, when fees occur, how we deal with icnreasing/decreasing ranges with volatility.
-
-## Foundry Uniswap V4 Setup
-
-```
-forge install https://github.com/Uniswap/v4-core --no-commit
-forge install https://github.com/Uniswap/periphery-next --no-commit
-forge install https://github.com/OpenZeppelin/openzeppelin-contracts --no-commit
-forge install https://github.com/bokkypoobah/BokkyPooBahsDateTimeLibrary --no-commit
-forge install https://github.com/Vectorized/solady --no-commit
-forge compile
-```
 
 
 # Horsefact trading hours info:
@@ -120,13 +136,6 @@ Thanks to:
 
 <img src="./img/uniswap_fees_hook.jpg" width=800px />
 
-### Foundry deploy and verify contract code manually 
-```shell
-forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView
-```
-### Deployed and verified contract on Sepolia 
-
-https://sepolia.etherscan.io/address/0xc7a03c696cec68b6675c3df09d83900cd5a40687#code
 
 
 
