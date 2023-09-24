@@ -120,5 +120,10 @@ Thanks to:
 
 <img src="./img/uniswap_fees_hook.jpg" width=800px />
 
+## Deploy contract manually 
+```shell
+forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView
+```
+
 
 
