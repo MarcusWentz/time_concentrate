@@ -30,7 +30,7 @@ forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey 
 ```shell
 forge create --legacy --rpc-url https://sepolia-rpc.scroll.io/ --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView --verify --verifier blockscout --verifier-url https://sepolia-blockscout.scroll.io/api\? 
 ```
-or
+or (deployed at address 0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B already)
 ```shell
 forge verify-contract 0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B src/TradingView.sol:TradingView --chain-id 534351 --verifier-url https://sepolia-blockscout.scroll.io/api\? --verifier blockscout
 ```
