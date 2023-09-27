@@ -54,6 +54,11 @@ or (deployed at address 0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B already)
 forge verify-contract 0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B src/TradingView.sol:TradingView --chain-id 534351 --verifier-url https://sepolia-blockscout.scroll.io/api\? --verifier blockscout 
 ```
 
+### Taiko
+```
+forge create --rpc-url https://rpc.jolnir.taiko.xyz --private-key $devTestnetPrivateKey src/TradingView.sol:TradingView --verify --verifier blockscout --verifier-url https://blockscoutapi.jolnir.taiko.xyz/api\?
+```
+
 ## Deployed and verified contract 
 
 ### Sepolia 
@@ -69,6 +74,10 @@ https://sepolia.scrollscan.dev/address/0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977
 #### Blockscout
 
 https://sepolia-blockscout.scroll.io/address/0x8FDDf2Fe177d16C2783b1F52dc71ABbc4366977B/contracts#address-tabs
+
+#### Taiko 
+
+https://explorer.jolnir.taiko.xyz/address/0xd333D33D5D4d5Ff8D14A4aa924889e2222954b53?tab=contract
 
 ## Time Ranges
 
