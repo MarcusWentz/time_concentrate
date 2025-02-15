@@ -17,7 +17,7 @@ forge compile
 manually install libraries if needed
 ```shell
 forge install https://github.com/Uniswap/v4-core --no-commit
-forge install https://github.com/Uniswap/periphery-next --no-commit
+forge install https://github.com/Uniswap/v4-periphery --no-commit
 forge install https://github.com/OpenZeppelin/openzeppelin-contracts --no-commit
 forge install https://github.com/bokkypoobah/BokkyPooBahsDateTimeLibrary --no-commit
 forge install https://github.com/Vectorized/solady --no-commit
